@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { CssBaseline, Container, Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import ChatArea from "./components/ChatArea";
+import Sidebar from "./components/Sidebar";
 
+const useStyles = makeStyles((theme) => ({
+  "@global": {
+    "*::-webkit-scrollbar": {
+      width: "0.4em",
+    },
+    "*::-webkit-scrollbar-thumb": {
+      backgroundColor: "rgba(0,0,0,.1)",
+    },
+  },
+  root: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    overflow: "hidden",
+    backgroundColor: "red",
+    height: "100vh",
+  },
+  container: {
+    display: "flex",
+    background: "linear-gradient(to bottom, #009688 13vh, #D9DCD6 13vh);",
+    minHeight: "100vh",
+    maxHeight: "100vh",
+    padding: "2vh 0",
+  },
+  innerContainer: {
+    display: "grid",
+    gridTemplateColumns: "2fr 6fr",
+    minHeight: "100%",
+    maxHeight: "100%",
+    width: "100%",
+    padding: "0",
+  },
+}));
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CssBaseline>
+      <Container className={classes.container} maxWidth="xl">
+        <Container className={classes.innerContainer}>
+          <Sidebar />
+          <ChatArea />
+        </Container>
+      </Container>
+    </CssBaseline>
   );
 }
 
