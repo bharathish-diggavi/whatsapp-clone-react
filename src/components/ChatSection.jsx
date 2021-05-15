@@ -8,7 +8,6 @@ import {
   Send,
 } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
-import _ from "lodash";
 
 const useStyles = makeStyles((theme) => ({
   chatSection: {

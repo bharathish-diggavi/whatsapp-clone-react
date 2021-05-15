@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ChatArea = () => {
   const classes = useStyles();
-  const [messages, setMessages] = useState([1]);
+  const [messages] = useState([1]);
   return (
     <div className={classes.chatArea}>
       {messages.length === 0 ? <NoMessages /> : <ChatSection />}
